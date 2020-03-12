@@ -1,0 +1,79 @@
+﻿@page "/getting-started"
+
+<PageHeader Title="Setup"
+            SubHeading="How to get up and running with Blazored Modal." />
+
+<h2 class="mb-4 mt-8 text-2xl">
+    <span class="text-lg bg-gray-200 text-gray-700 h-6 w-6 rounded-full inline-flex justify-center items-center mt-px mr-3">1</span>
+    Installation
+</h2>
+
+<p>
+    You can install the package via the nuget package manager just search for Blazored.Modal.
+    You can also install via powershell using the following command.
+</p>
+
+<Code Language="language-powershell">Install-Package Blazored.Modal</Code>
+
+<p>Or via the dotnet CLI.</p>
+
+<Code Language="language-bash">dotnet add package Blazored.Modal</Code>
+
+<h2 class="mb-4 mt-8 text-2xl">
+    <span class="text-lg bg-gray-200 text-gray-700 h-6 w-6 rounded-full inline-flex justify-center items-center mt-px mr-3">2</span>
+    Register Services
+</h2>
+
+<p>
+    Blazor Server you will need to add the following using statement and add a call to register
+    the Blazored Modal services in your applications Startup.ConfigureServices method.
+</p>
+
+
+<Code Language="language-csharp">using Blazored.Modal;
+
+public void ConfigureServices(IServiceCollection services)
+{
+    services.AddBlazoredModal();
+}</Code>
+
+<p>
+    For Blazor WebAssembly you will need to add the following using statement and add a call to
+    register the Blazored Modal services in your applications Program.Main method.
+</p>
+
+<Code Language="language-csharp">using Blazored.Modal;
+
+public static async Task Main(string[] args)
+{
+    var builder = WebAssemblyHostBuilder.CreateDefault(args);
+    builder.RootComponents.Add@("<App>")("app");
+
+    builder.Services.AddBlazoredModal();
+
+    await builder.Build().RunAsync();
+}</Code>
+
+<h2 class="mb-4 mt-8 text-2xl">
+    <span class="text-lg bg-gray-200 text-gray-700 h-6 w-6 rounded-full inline-flex justify-center items-center mt-px mr-3">3</span>
+    Import Namespaces
+</h2>
+
+<p>
+    Add the following to your <code>_Imports.razor</code>.
+</p>
+
+<Code Language="language-csharp">@@using Blazored
+@@using Blazored.Modal
+@@using Blazored.Modal.Services</Code>
+
+<h2 class="mb-4 mt-8 text-2xl">
+    <span class="text-lg bg-gray-200 text-gray-700 h-6 w-6 rounded-full inline-flex justify-center items-center mt-px mr-3">4</span>
+    Add The BlazoredModal Component
+</h2>
+
+<p>
+    Add the <code>BlazoredModal</code> component into your applications <em>MainLayout.razor</em>.
+</p>
+
+<Code Language="language-csharp">&lt;BlazoredModal /&gt;</Code>
