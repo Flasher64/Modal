@@ -1,7 +1,15 @@
 ﻿<p>
-    <pre class="@Language"><code class="@Language">@ChildContent</code></pre>
+    @if (HighlightLine == 0)
+    {
+        <pre class="@Language"><code class="@Language">@ChildContent</code></pre>
+    }
+    else
+    {
+        <pre class="@Language" data-line="@HighlightLine"><code class="@Language">@ChildContent</code></pre>
+    }
 </p>
 @code {
     [Parameter] public RenderFragment ChildContent { get; set; }
     [Parameter] public string Language { get; set; }
+    [Parameter] public int HighlightLine { get; set; }
 }

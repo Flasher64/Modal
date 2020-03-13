@@ -7,7 +7,7 @@ p {
 }
 
 code {
-    @apply bg-gray-200 rounded py-1 px-1;
+    @apply bg-gray-200 rounded py-1 px-1 text-sm;
 }
 
 /* purgecss end ignore */

@@ -42,7 +42,7 @@ public void ConfigureServices(IServiceCollection services)
     register the Blazored Modal services in your applications Program.Main method.
 </p>
 
-<Code Language="language-csharp">using Blazored.Modal;
+<Code Language="language-csharp" HighlightLine="8">using Blazored.Modal;
 
 public static async Task Main(string[] args)
 {
@@ -63,8 +63,7 @@ public static async Task Main(string[] args)
     Add the following to your <code>_Imports.razor</code>.
 </p>
 
-<Code Language="language-csharp">@@using Blazored
-@@using Blazored.Modal
+<Code Language="language-csharp">@@using Blazored.Modal
 @@using Blazored.Modal.Services</Code>
 
 <h2 class="mb-4 mt-8 text-2xl">
@@ -76,4 +75,4 @@ public static async Task Main(string[] args)
     Add the <code>BlazoredModal</code> component into your applications <em>MainLayout.razor</em>.
 </p>
 
-<Code Language="language-csharp">&lt;BlazoredModal /&gt;</Code>
+<Code Language="language-html">&lt;BlazoredModal /&gt;</Code>
