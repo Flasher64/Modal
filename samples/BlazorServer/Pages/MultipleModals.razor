@@ -16,7 +16,12 @@
 
 @code {
 
-    void ShowModal() => Modal.Show<YesNoPrompt>("First Modal");
+    void ShowModal()
+    {
+        var modalParams = new ModalParameters();
+        modalParams.Add("CustomerId", 1);
+        Modal.Show<ModalOne>("Modal One", modalParams);
+    }
 
 }
 

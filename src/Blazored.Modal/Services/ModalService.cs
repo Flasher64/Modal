@@ -118,15 +118,19 @@ namespace Blazored.Modal.Services
             {
                 var i = 0;
                 builder.OpenComponent(i++, contentComponent);
+                builder.SetKey(modalInstanceId);
                 foreach (var parameter in parameters._parameters)
                 {
                     builder.AddAttribute(i++, parameter.Key, parameter.Value);
                 }
                 builder.CloseComponent(); 
             });
+
+            var modalInstanceContentId = Guid.NewGuid();
             var modalInstance = new RenderFragment(builder =>
             {
                 builder.OpenComponent<BlazoredModalInstance>(0);
+                builder.SetKey(modalInstanceContentId);
                 builder.AddAttribute(1, "Options", options);
                 builder.AddAttribute(2, "Title", title);
                 builder.AddAttribute(3, "Content", modalContent);
